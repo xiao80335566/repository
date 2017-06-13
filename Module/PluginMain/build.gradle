@@ -39,6 +39,5 @@ dependencies {
     compile project(path: ':Libraries:DroidPlugin')
     compile project(':Module:PluginUtil')
     compile project(':PushSDK')
-//    compile fileTree(include: '*.jar', dir: '../../Libraries/shareLibs')
-//
+    compile fileTree(include: '*.jar', dir: '../../Libraries/shareLibs')
 }
