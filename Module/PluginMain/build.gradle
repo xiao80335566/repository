@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        xyd_app {
+            keyAlias 'jun'
+            keyPassword '123456'
+            storeFile file('../../keystore/xyd')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.xyd.project"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.xyd_app
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.xyd_app
+        }
+        debug {
+            signingConfig signingConfigs.xyd_app
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile project(path: ':Libraries:DroidPlugin')
+    compile project(':Module:PluginUtil')
+    compile project(':PushSDK')
+//    compile fileTree(include: '*.jar', dir: '../../Libraries/shareLibs')
+//
+}

@@ -1,0 +1,5 @@
+//include ':Libraries:shareLibs'
+include ':Module:PluginMain', ':PushSDK'
+include ':Module:Plugintest1'
+include ':Module:PluginUtil'
+include ':Libraries:DroidPlugin'
